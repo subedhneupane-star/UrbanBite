@@ -1,0 +1,611 @@
+/* ------------------------------
+   Basic Reset
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f5f0;
+    color: #222;
+}
+
+
+/* ------------------------------
+   Navigation
+------------------------------ */
+
+header {
+    background-color: #222;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------
+   Hero Section
+------------------------------ */
+
+main > section:first-child {
+    min-height: 70vh;
+    padding: 4rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        linear-gradient(
+            135deg,
+            #8b4513,
+            #222
+        );
+
+    color: white;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+main > section:first-child p {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+main > section:first-child a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+
+    background-color: #ffffff;
+    color: #222;
+
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+main > section:first-child a:hover {
+    background-color: #dddddd;
+}
+
+
+/* ------------------------------
+   Features Section
+------------------------------ */
+
+.features {
+    padding: 4rem 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+article {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+}
+
+article h3 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+
+/* ------------------------------
+   Tablet and Desktop
+------------------------------ */
+
+@media (min-width: 768px) {
+.footer-content {
+    grid-template-columns: repeat(3, 1fr);
+}
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+    h2 {
+        grid-column: 1 / -1;
+    }
+
+    article {
+        margin-bottom: 0;
+    }
+}
+/* ------------------------------
+   Menu Page
+------------------------------ */
+
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.menu-filters button {
+    padding: 0.7rem 1.2rem;
+
+    border: 2px solid #222;
+    border-radius: 5px;
+
+    background-color: white;
+    color: #222;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-filters button:hover {
+    background-color: #222;
+    color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    margin-bottom: 0;
+}
+
+.menu-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+.menu-item p:last-child {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+/* ------------------------------
+   Menu Page - Larger Screens
+------------------------------ */
+
+@media (min-width: 768px) {
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+/* ------------------------------
+   Reservation Page
+------------------------------ */
+
+.reservation-section {
+    padding: 4rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.reservation-section h2 {
+    margin-bottom: 2rem;
+}
+
+#reservationForm {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+
+    border: 1px solid #999;
+    border-radius: 5px;
+
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 3px solid #d6b98c;
+    border-color: #222;
+}
+
+#reservationForm button {
+    width: 100%;
+    padding: 0.9rem;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #222;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#reservationForm button:hover {
+    background-color: #444;
+}
+
+#formMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+/* ------------------------------
+   Mobile Navigation
+------------------------------ */
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+
+/* ------------------------------
+   Desktop Navigation
+------------------------------ */
+
+@media (min-width: 768px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+}
+/* ------------------------------
+   Featured Dishes
+------------------------------ */
+
+.featured {
+    padding: 4rem 1.5rem;
+}
+
+.featured-item {
+    margin-bottom: 1.5rem;
+
+    padding: 2rem;
+
+    background-color: #e8ded0;
+
+    border-radius: 10px;
+}
+
+.featured-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+.price {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* ------------------------------
+   Featured Dishes - Desktop
+------------------------------ */
+
+@media (min-width: 768px) {
+
+    .featured {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .featured h2 {
+        grid-column: 1 / -1;
+    }
+
+    .featured-item {
+        margin-bottom: 0;
+    }
+
+}
+/* ------------------------------
+   Page Headers
+------------------------------ */
+
+.page-header {
+    padding: 4rem 1.5rem;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        linear-gradient(
+            135deg,
+            #8b4513,
+            #222
+        );
+
+    color: white;
+}
+
+.page-header h1 {
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Active Menu Filter */
+
+.menu-filters button[aria-pressed="true"] {
+    background-color: #8b4513;
+    color: white;
+    font-weight: bold;
+}
+
+/* Keyboard Focus */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #d4a017;
+    outline-offset: 3px;
+}
+/* Back to Top Button */
+
+#backToTop {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#backToTop:hover {
+    background-color: #8b4513;
+}
+
+#backToTop:focus-visible {
+    outline: 3px solid #d4a017;
+    outline-offset: 3px;
+}
+/* Form Feedback */
+
+#formMessage {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/* Active Navigation Link */
+
+.nav-links a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+/* Skip Link */
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+/* Card Hover Effects */
+
+.features article,
+.featured-item,
+.menu-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.features article:hover,
+.featured-item:hover,
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Menu Filter Buttons */
+
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.menu-filters button {
+    padding: 0.65rem 1rem;
+    border: 1px solid #8b4513;
+    border-radius: 6px;
+    background-color: white;
+    color: #222;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-filters button:hover {
+    background-color: #8b4513;
+    color: white;
+}
+/* Footer Layout */
+
+footer {
+    margin-top: 3rem;
+    padding: 3rem 1.5rem 1.5rem;
+    background-color: #222;
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-content h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.footer-content p {
+    margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 0.9rem;
+}
